@@ -2,12 +2,19 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: orangered;
+    background-color: #302e2e;
     width: 100vw;
     height: 8vh;
     z-index: 999;
 }
 
+.nav-logo span {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+#LogoName1{
+    color: orangered;
+}
 .Toggle-Container {
     position: relative;
     margin-left: 40px;
@@ -22,18 +29,20 @@ nav{
   position: absolute;
   top: 3.5px;
   left: 3px;
-  background-color: red;
+  background-color: orangered;
   width: 33px;
   height: 33px;
   border-radius: 50%;
+  transition: .6s;
 }
 
 .Toggle-Switcher-Moved {
   position: absolute;
   top: 3.5px;
   left: 42px;
-  background-color: red;
+  background-color: #302e2e;
   width: 33px;
   height: 33px;
   border-radius: 50%;
+  transition: .6s;
 }
