@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import {MdNavigateBefore,MdNavigateNext} from 'react-icons/md'
 
 const Main = () => {
     const Api = 'https://free-to-play-games-database.p.rapidapi.com/api/games'
@@ -21,9 +22,22 @@ const Main = () => {
   return (
     <>
      <div className='container'>
-        <div className='Bg-Container-dark'>
+      <div className='Main-Bg-Container-dark' style={{display: 'flex', alignItems: 'center', justifyContent: 'center',margin: '2rem' }}>
             {games && <img src={games[indexOf].thumbnail} alt='' /> }
             {games && <h2>{games[indexOf].title}</h2> }
+            <MdNavigateBefore fontSize={100} cursor='pointer' onClick={() => setIndexOf(indexOf - 1)} />
+            <MdNavigateNext fontSize={100} cursor='pointer' onClick={() => setIndexOf(indexOf + 1)}/>
+      </div>
+        <div className='Bg-Container-dark' style={{display: 'grid', gridTemplateColumns: "1fr 1fr 1fr 1fr",rowGap: '1rem'}}>
+            
+            {games.map((game,index) => {
+              return (
+                <div key={index}>
+                  <img src={game.thumbnail} alt={game.title}/>
+                  <h2>{game.title}</h2>
+                </div>
+              )
+            })}
         </div>
      </div>
     </>
