@@ -1,0 +1,31 @@
+.GameInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 86.99vh;
+}
+#GameInfoImg{
+    width: 500px;
+    height: 300px;
+}
+.Download-Container{
+    display: flex;
+}
+#GameInfoLink-light {
+    font-size: 2rem;
+    color: white;
+    background-color: orangered;
+    padding: 1rem 2rem;
+}
+#GameInfoLink-dark {
+    font-size: 2rem;
+    color: #302e2e;
+    background-color: white;
+    padding: 1rem 2rem;
+}
+.GameInfo-Side{
+    padding-left: 5rem;
+}
+.GameInfoP {
+    color: white;
+}

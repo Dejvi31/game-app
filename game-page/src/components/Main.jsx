@@ -1,8 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import {MdNavigateBefore,MdNavigateNext} from 'react-icons/md'
+import {ToggleContainer} from '../App'
+import '../styles/Main.css'
+import AllGames from './shorts/AllGames'
+import PcGames from './shorts/PcGames'
+import BrowserGames from './shorts/BrowserGames'
+
 
 const Main = () => {
+   const {themeSwitch} = useContext(ToggleContainer)
     const Api = 'https://free-to-play-games-database.p.rapidapi.com/api/games'
     const [games,setGames] = useState([{}])
     const [indexOf,setIndexOf] = useState(0)
@@ -14,7 +21,6 @@ const Main = () => {
               }
         })
         setGames(data.data)
-        console.log(data.data)
     }
   useEffect(() => {
     ApiCall()
@@ -22,23 +28,21 @@ const Main = () => {
   return (
     <>
      <div className='container'>
-      <div className='Main-Bg-Container-dark' style={{display: 'flex', alignItems: 'center', justifyContent: 'center',margin: '2rem' }}>
+      <div className={themeSwitch ? 'Main-Bg-Container-light' : 'Main-Bg-Container-dark'}>
             {games && <img src={games[indexOf].thumbnail} alt='' /> }
-            {games && <h2>{games[indexOf].title}</h2> }
-            <MdNavigateBefore fontSize={100} cursor='pointer' onClick={() => setIndexOf(indexOf - 1)} />
-            <MdNavigateNext fontSize={100} cursor='pointer' onClick={() => setIndexOf(indexOf + 1)}/>
+            {games && <h2 className={themeSwitch ? null : 'Game-Title-light'}>{games[indexOf].title}</h2> }
+            <MdNavigateBefore fontSize={100} cursor='pointer' onClick={() => setIndexOf(indexOf - 1)} className={indexOf < 1 ? 'disable' : null} style={themeSwitch ? null : {color: 'white'}}/>
+            <MdNavigateNext fontSize={100} cursor='pointer' onClick={() => setIndexOf(indexOf + 1)} className={indexOf >= 373 ? 'disable' : null} style={themeSwitch ? null : {color: 'white'}}/>
       </div>
-        <div className='Bg-Container-dark' style={{display: 'grid', gridTemplateColumns: "1fr 1fr 1fr 1fr",rowGap: '1rem'}}>
-            
-            {games.map((game,index) => {
-              return (
-                <div key={index}>
-                  <img src={game.thumbnail} alt={game.title}/>
-                  <h2>{game.title}</h2>
-                </div>
-              )
-            })}
-        </div>
+      <div style={{padding: '2rem'}} className={themeSwitch ? 'Bg-Container-light' : 'Bg-Container-dark'}>
+        
+      <AllGames />
+      
+      <div style={{margin: '2rem 0'}}>
+      <PcGames />
+      </div>
+      <BrowserGames />
+      </div>
      </div>
     </>
   )

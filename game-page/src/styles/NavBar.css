@@ -7,13 +7,18 @@ nav{
     height: 8vh;
     z-index: 999;
 }
-
+.nav-logo {
+  cursor: pointer;
+}
 .nav-logo span {
     text-transform: uppercase;
     font-size: 2.5rem;
 }
 #LogoName1{
     color: orangered;
+}
+#LogoName2 {
+  color: white;
 }
 .Toggle-Container {
     position: relative;

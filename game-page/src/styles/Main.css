@@ -1,0 +1,40 @@
+.disable {
+    display: none;
+}
+.Main-Bg-Container-dark{
+    background-color: #302e2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.72rem;
+    gap: 3rem;
+}
+.Main-Bg-Container-light{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.72rem;
+    gap: 3rem;
+}
+.Bg-Container-dark {
+    background-color: #302e2e;
+}
+.Bg-Container-light {
+    background-color: white;
+}
+.Game-Title-light {
+    color: white;
+}
+.Link-light {
+    background-color: orangered;
+    color: white;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+.Link-dark {
+    background-color: white;
+    color: #302e2e;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
