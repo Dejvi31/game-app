@@ -9,7 +9,8 @@ const GameInfo = () => {
   const {id} = useParams()
     const {themeSwitch} = useContext(ToggleContainer)
     const Api = 'https://free-to-play-games-database.p.rapidapi.com/api/game'
-    const [games,setGames] = useState([{}])
+    const [games,setGames] = useState([])
+
     const ApiCall = async() => {
         const data = await axios.get(Api,{
             params: {id: `${id}`},
@@ -18,12 +19,18 @@ const GameInfo = () => {
                 "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com"
               }
         })
-        console.log(data.data)
+        
+        console.log(data.data.minimum_system_requirements.graphics)
         setGames(data.data)
+
     }
   useEffect(() => {
     ApiCall()
   },[])
+
+ 
+
+
   return (
     <>
     <div className={themeSwitch ? 'Main-Bg-Container-light' : 'Main-Bg-Container-dark'}>
@@ -43,11 +50,11 @@ const GameInfo = () => {
            <h3 className={themeSwitch ? null : 'GameInfoP'}>Minimum System Requirements</h3>
             </div>
             <div className='GameInfo-Side-Text'>
-           <p className={themeSwitch ? null : 'GameInfoP'}>Graphics: </p>   
-           <p className={themeSwitch ? null : 'GameInfoP'}>Memory: </p>
-           <p className={themeSwitch ? null : 'GameInfoP'}>OS: </p>
-           <p className={themeSwitch ? null : 'GameInfoP'}>Processor: </p>
-           <p className={themeSwitch ? null : 'GameInfoP'}>Storage: </p>
+           <p className={themeSwitch ? null : 'GameInfoP'}>Graphics: {games?.minimum_system_requirements?.graphics} </p>   
+           <p className={themeSwitch ? null : 'GameInfoP'}>Memory: {games?.minimum_system_requirements?.memory}</p>
+           <p className={themeSwitch ? null : 'GameInfoP'}>OS: {games?.minimum_system_requirements?.os}</p>
+           <p className={themeSwitch ? null : 'GameInfoP'}>Processor: {games?.minimum_system_requirements?.processor}</p>
+           <p className={themeSwitch ? null : 'GameInfoP'}>Storage: {games?.minimum_system_requirements?.storage}</p>
             </div>
         </div>
        </div>
