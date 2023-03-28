@@ -34,7 +34,7 @@ const Main = () => {
             <MdNavigateBefore fontSize={100} cursor='pointer' onClick={() => setIndexOf(indexOf - 1)} className={indexOf < 1 ? 'disable' : null} style={themeSwitch ? null : {color: 'white'}}/>
             <MdNavigateNext fontSize={100} cursor='pointer' onClick={() => setIndexOf(indexOf + 1)} className={indexOf >= 373 ? 'disable' : null} style={themeSwitch ? null : {color: 'white'}}/>
       </div>
-      <div style={{padding: '2rem'}} className={themeSwitch ? 'Bg-Container-light' : 'Bg-Container-dark'}>
+      <div style={{padding: '2rem'}} className={themeSwitch ? 'Bg-Container-Light' : 'Bg-Container-Dark'}>
         
       <AllGames />
       

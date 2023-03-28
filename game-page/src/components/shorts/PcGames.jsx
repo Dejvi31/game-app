@@ -23,11 +23,11 @@ const PcGames = () => {
     ApiCall()
   },[])
   return (
-    <div className={themeSwitch ? "Bg-Container-light" : 'Bg-Container-dark'} style={{display: 'grid', gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",gap: '1rem'}}>
+    <div className={themeSwitch ? "Bg-Container-light" : 'Bg-Container-dark'} >
          <div style={{display: 'flex', alignItems: 'center',justifyContent: 'center' }}>
           <h1 className={themeSwitch ? 'Link-light' : 'Link-dark'} onClick={() => navigate('./pcgames')}>Pc Games</h1>
           </div>
-    {games.slice(4,8).map((game,index) => {
+    {games.slice(4,7).map((game,index) => {
       return (
         <div key={index}>
           <img src={game.thumbnail} alt={game.title}/>

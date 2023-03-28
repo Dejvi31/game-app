@@ -22,11 +22,12 @@ const AllGames = () => {
     ApiCall()
   },[])
   return (
-    <div className={themeSwitch ? "Bg-Container-light" : 'Bg-Container-dark'} style={{display: 'grid', gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",gap: '1rem'}}>
+    <div className={themeSwitch ? "Bg-Container-light" : 'Bg-Container-dark'} >
          <div style={{display: 'flex', alignItems: 'center',justifyContent: 'center' }}>
           <h1 className={themeSwitch ? 'Link-light' : 'Link-dark'} onClick={() => navigate('./allgames')} >All Games</h1>
           </div>
-    {games.slice(0,4).map((game,index) => {
+         
+    {games.slice(0,3).map((game,index) => {
       return (
         <div key={index}>
           <img src={game.thumbnail} alt={game.title}/>
@@ -34,6 +35,10 @@ const AllGames = () => {
         </div>
       )
     })}
+   
+    
+    
+   
 </div>
   )
 }

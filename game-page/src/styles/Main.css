@@ -19,9 +19,25 @@
 }
 .Bg-Container-dark {
     background-color: #302e2e;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem; 
 }
 .Bg-Container-light {
     background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+.Bg-Container-Light{
+    background-color: white;
+}
+.Bg-Container-Dark{
+    background-color: #302e2e;
 }
 .Game-Title-light {
     color: white;
@@ -38,3 +54,7 @@
     padding: 1rem 2rem;
     cursor: pointer;
 }
+
+
+/* ================== Media ======================= */
+

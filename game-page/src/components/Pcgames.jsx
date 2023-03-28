@@ -24,7 +24,7 @@ const PcGames = () => {
     ApiCall()
   },[])
   return (
-    <div className={themeSwitch ? "Bg-Container-light" : 'Bg-Container-dark'} style={{display: 'grid', gridTemplateColumns: "1fr 1fr 1fr 1fr",gap: '1rem',textAlign: 'center',padding: '1rem'}}>
+    <div className={themeSwitch ? "Bg-Container-light" : 'Bg-Container-dark'} >
          <div style={{display: 'flex', alignItems: 'center',justifyContent: 'center' }}>
           <h1 style={themeSwitch ? {cursor: 'pointer'} : {color: 'white',cursor: 'pointer'}}>Pc Games</h1>
           </div>
