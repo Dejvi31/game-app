@@ -46,8 +46,4 @@
     .GameInfo-Top{
         padding: 0.5rem;
     }
-    .GameInfo-Side{
-        position: absolute;
-        bottom: 22rem;
-    }
 }
