@@ -31,10 +31,12 @@ const Main = () => {
       <div className={themeSwitch ? 'Main-Bg-Container-light' : 'Main-Bg-Container-dark'}>
             {games && <img src={games[indexOf].thumbnail} alt='' /> }
             {games && <h2 className={themeSwitch ? null : 'Game-Title-light'}>{games[indexOf].title}</h2> }
+            <div className='arrows'>
             <MdNavigateBefore fontSize={100} cursor='pointer' onClick={() => setIndexOf(indexOf - 1)} className={indexOf < 1 ? 'disable' : null} style={themeSwitch ? null : {color: 'white'}}/>
             <MdNavigateNext fontSize={100} cursor='pointer' onClick={() => setIndexOf(indexOf + 1)} className={indexOf >= 373 ? 'disable' : null} style={themeSwitch ? null : {color: 'white'}}/>
+            </div>
       </div>
-      <div style={{padding: '2rem'}} className={themeSwitch ? 'Bg-Container-Light' : 'Bg-Container-Dark'}>
+      <div className={themeSwitch ? 'Bg-Container-Light' : 'Bg-Container-Dark'}>
         
       <AllGames />
       

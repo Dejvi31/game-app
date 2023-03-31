@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 86.99vh;
+    height: 88vh;
 }
 #GameInfoImg{
     width: 500px;
@@ -28,4 +28,26 @@
 }
 .GameInfoP {
     color: white;
+}
+
+
+/* ======================== Media ====================== */
+
+@media screen and (max-width: 425px) {
+    .GameInfo{
+        display: grid;
+        align-items: normal;
+    }
+    #GameInfoImg{
+        width: 300px;
+        height: 240px;
+    }
+    .GameInfo-Side,
+    .GameInfo-Top{
+        padding: 0.5rem;
+    }
+    .GameInfo-Side{
+        position: absolute;
+        bottom: 22rem;
+    }
 }

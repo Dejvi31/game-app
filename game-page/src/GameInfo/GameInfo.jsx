@@ -19,8 +19,6 @@ const GameInfo = () => {
                 "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com"
               }
         })
-        
-        console.log(data.data.minimum_system_requirements.graphics)
         setGames(data.data)
 
     }
